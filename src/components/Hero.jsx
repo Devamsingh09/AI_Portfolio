@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import photo from "../assets/photo.js";
+import resume from "../assets/resume.js";
 import styles from "./Hero.module.css";
 
 const fadeUp = (delay = 0) => ({
@@ -47,6 +48,13 @@ export default function Hero() {
         <motion.div className={styles.actions} {...fadeUp(0.75)}>
           <a href="#projects" className="btn btn-primary">View My Work →</a>
           <a href="mailto:devamsingh0009@gmail.com" className="btn btn-outline">📩 Get in Touch</a>
+          <a
+            href={resume}
+            download="Devam_Singh_Resume.pdf"
+            className={styles.resumeBtn}
+          >
+            ↓ Resume
+          </a>
         </motion.div>
       </div>
 

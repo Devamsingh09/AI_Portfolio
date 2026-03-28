@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import resume from "../assets/resume.js";
 import styles from "./Contact.module.css";
 
 const contactLinks = [
@@ -60,6 +61,17 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.45 }}
         >
           📬 &nbsp; devamsingh0009@gmail.com &nbsp; →
+        </motion.a>
+
+        <motion.a
+          href={resume}
+          download="Devam_Singh_Resume.pdf"
+          className={styles.resumeBtn}
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.55 }}
+        >
+          ↓ &nbsp; Download Resume
         </motion.a>
       </motion.div>
     </section>
