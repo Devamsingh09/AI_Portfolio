@@ -1,0 +1,145 @@
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-left: clamp(1.5rem, 6vw, 6rem);
+  padding-right: clamp(1.5rem, 6vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.blob1, .blob2 {
+  position: absolute; pointer-events: none; border-radius: 50%;
+}
+.blob1 {
+  top: 10%; right: -10%;
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(110,231,183,0.07) 0%, rgba(129,140,248,0.05) 40%, transparent 70%);
+  animation: float 14s ease-in-out infinite;
+}
+.blob2 {
+  bottom: -20%; left: -10%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(129,140,248,0.06) 0%, transparent 70%);
+  animation: float 18s ease-in-out infinite reverse;
+}
+@keyframes float {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(3%, 5%) scale(1.05); }
+  66% { transform: translate(-2%, 3%) scale(0.97); }
+}
+
+.left { position: relative; z-index: 2; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem; color: var(--accent);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+.eyebrow::before {
+  content: ''; width: 28px; height: 1px; background: var(--accent);
+}
+.dot {
+  width: 7px; height: 7px;
+  background: var(--accent); border-radius: 50%;
+  margin-left: 0.3rem;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.h1 {
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 900;
+  line-height: 0.93;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.75rem;
+  display: block;
+}
+.word { display: inline-block; overflow: hidden; }
+.gradient {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: var(--text2); line-height: 1.75;
+  max-width: 480px; margin-bottom: 2.5rem;
+}
+.sub strong { color: var(--text); font-weight: 500; }
+
+.actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Photo */
+.right {
+  position: relative; z-index: 2;
+  display: flex; justify-content: center; align-items: center;
+}
+.photoFrame {
+  position: relative;
+  width: clamp(260px, 30vw, 360px);
+  height: clamp(320px, 38vw, 440px);
+}
+.photoFrame::before {
+  content: '';
+  position: absolute; inset: -2px; border-radius: 24px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  z-index: 0; opacity: 0.5;
+  animation: gradSpin 6s linear infinite;
+}
+@keyframes gradSpin {
+  from { filter: hue-rotate(0deg); }
+  to   { filter: hue-rotate(360deg); }
+}
+.photoInner {
+  position: relative; z-index: 1;
+  width: 100%; height: 100%;
+  border-radius: 22px; overflow: hidden;
+  background: var(--surface2);
+}
+.photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  background: var(--surface2);
+  border: 1px solid var(--border-bright);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem; color: var(--text);
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+  z-index: 3;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.b1 { top: 8%; left: -32%; animation: floatBadge 4s ease-in-out infinite; }
+.b2 { bottom: 18%; right: -28%; animation: floatBadge 5s 1s ease-in-out infinite; }
+.b3 { top: 55%; left: -34%; animation: floatBadge 4.5s 0.5s ease-in-out infinite; }
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; text-align: center; padding-top: calc(var(--nav-h) + 3rem); }
+  .actions { justify-content: center; }
+  .eyebrow { justify-content: center; }
+  .right { justify-content: center; }
+  .sub { max-width: 100%; }
+  .b1, .b3 { display: none; }
+  .b2 { right: -5%; font-size: 0.62rem; padding: 0.5rem 0.75rem; }
+}

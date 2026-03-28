@@ -1,0 +1,22 @@
+.dot, .ring {
+  position: fixed; pointer-events: none; z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+.dot {
+  width: 10px; height: 10px;
+  background: var(--accent); border-radius: 50%;
+  mix-blend-mode: difference;
+}
+.dotHover { width: 18px; height: 18px; background: var(--accent2); }
+.ring {
+  width: 32px; height: 32px;
+  border: 1.5px solid rgba(110,231,183,0.35);
+  border-radius: 50%;
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+.ringHover { width: 48px; height: 48px; border-color: rgba(129,140,248,0.4); }
+
+@media (max-width: 768px) {
+  .dot, .ring { display: none; }
+}

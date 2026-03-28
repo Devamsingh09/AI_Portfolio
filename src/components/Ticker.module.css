@@ -1,0 +1,25 @@
+.wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1rem 0;
+}
+.track {
+  display: inline-flex;
+  animation: roll 28s linear infinite;
+  white-space: nowrap;
+}
+.item {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; color: var(--text3);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0 2.5rem;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+}
+.item::before { content: '◆'; color: var(--accent); font-size: 0.4rem; }
+
+@keyframes roll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
