@@ -50,7 +50,7 @@ export default function Hero() {
           <a href="mailto:devamsingh0009@gmail.com" className="btn btn-outline">📩 Get in Touch</a>
           <a
             href={resume}
-            download="Devam_Singh_Resume.pdf"
+            download="Resume-DevamSingh2022UG3016.pdf"
             className={styles.resumeBtn}
           >
             ↓ Resume

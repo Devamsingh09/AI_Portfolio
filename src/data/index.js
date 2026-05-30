@@ -89,13 +89,30 @@ export const skills = [
 
 export const experience = [
   {
+    role: "Gen AI Developer Intern",
+    company: "Wiingy",
+    period: "Apr 2026 — Present",
+    points: [
+      "Working on Wiingy's agentic RAG based search engine",
+      "Building GenAI workflows using LangChain, LangGraph, and LLM APIs",
+    ],
+  },
+  {
+    role: "AI/ML Engineer Intern",
+    company: "Stremly",
+    period: "Mar 2026 — Apr 2026",
+    points: [
+      "Contributed in Stremly NOX product for automation of business tasks using frameworks like Temporal and MCP servers",
+    ],
+  },
+  {
     role: "Data Science Intern",
     company: "Prashnottar",
     period: "Jun 2025 — Aug 2025",
     points: [
       "Performed student clustering using unsupervised learning (K-Means, DBSCAN) to group students by learning patterns",
       "Classified students into performance-based categories, revealing actionable insights to improve academic outcomes",
-      "Visualised clustering patterns with Matplotlib & Seaborn, enabling data-driven decisions for curriculum optimisation",
+      "Visualized patterns with Matplotlib & Seaborn, enabling data-driven decisions for curriculum optimization",
     ],
   },
 ];

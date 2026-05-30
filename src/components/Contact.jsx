@@ -65,7 +65,7 @@ export default function Contact() {
 
         <motion.a
           href={resume}
-          download="Devam_Singh_Resume.pdf"
+          download="Resume-DevamSingh2022UG3016.pdf"
           className={styles.resumeBtn}
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
